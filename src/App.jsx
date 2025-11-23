@@ -21,6 +21,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/Home";           // Página de inicio (pública)
 import Login from "./pages/Login";        // Página de inicio de sesión
 import Dashboard from "./pages/Dashboard"; // Página principal (protegida)
+import NotFound from "./pages/NotFound";   // Página de error 404
 
 // Componente principal de la aplicación
 function App() {
@@ -61,6 +62,11 @@ function App() {
               </PrivateRoute>
             }
           />
+
+          {/* RUTA DE ERROR: 404 Not Found */}
+          {/* Esta ruta captura cualquier URL que no coincida con las anteriores */}
+          {/* path="*" significa "cualquier ruta" */}
+          <Route path="*" element={<NotFound />} />
 
         </Routes>
 
